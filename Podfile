@@ -12,6 +12,7 @@ target 'crm-ios-app' do
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
   pod 'RxOptional'
+  pod 'LTHRadioButton'
   pod 'SwifterSwift'
   pod 'IQKeyboardManagerSwift', '6.0.0'
 end
