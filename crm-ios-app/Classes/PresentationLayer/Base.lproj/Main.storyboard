@@ -12,84 +12,16 @@
         <!--Tab Bar Controller-->
         <scene sceneID="hGK-uF-W62">
             <objects>
-                <tabBarController id="Tak-no-OA9" sceneMemberID="viewController">
+                <tabBarController id="Tak-no-OA9" customClass="TabBarController" customModule="crm_ios_app" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="yAH-B4-Ypq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="3Mo-JZ-cnA" kind="relationship" relationship="viewControllers" id="EW4-xW-t5e"/>
-                        <segue destination="4H2-2u-qPA" kind="relationship" relationship="viewControllers" id="Qfr-wN-EgY"/>
-                        <segue destination="O7B-60-UgY" kind="relationship" relationship="viewControllers" id="W9c-PL-90c"/>
-                        <segue destination="9Tg-E5-Waj" kind="relationship" relationship="viewControllers" id="ihU-dS-eXA"/>
-                        <segue destination="8XZ-bG-D0i" kind="relationship" relationship="viewControllers" id="3IW-ix-fRN"/>
-                        <segue destination="MpV-N8-Imq" kind="relationship" relationship="viewControllers" id="94z-27-iaD"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XID-pZ-Br9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1196" y="212"/>
-        </scene>
-        <!--Shop-->
-        <scene sceneID="qYF-CT-Mpc">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Shop" id="3Mo-JZ-cnA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Главная" id="loX-tR-uGu"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8uw-8L-9Y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1954" y="-116"/>
-        </scene>
-        <!--Chat-->
-        <scene sceneID="UQh-Xi-fzi">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Chat" id="4H2-2u-qPA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Чат" id="OBW-1T-kAm"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U94-rl-YYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1930" y="7"/>
-        </scene>
-        <!--Discounts-->
-        <scene sceneID="D1c-ze-NXt">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Discounts" id="O7B-60-UgY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Скидки" id="rVh-ji-iry"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9X1-lD-9kF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1930" y="123"/>
-        </scene>
-        <!--Accounts-->
-        <scene sceneID="gMX-S0-vki">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Accounts" id="9Tg-E5-Waj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Учетные записи" id="HKf-Ki-1cL"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YPq-uC-7GY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1924" y="211"/>
-        </scene>
-        <!--Reports-->
-        <scene sceneID="TdH-ap-IgN">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Reports" id="8XZ-bG-D0i" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Отчеты" id="AuC-ys-neM"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rI0-F7-qq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1946" y="499"/>
-        </scene>
-        <!--Goods-->
-        <scene sceneID="99A-fm-b3l">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Goods" id="MpV-N8-Imq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Товары" id="veW-wM-h2f"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6VL-Bf-LAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1938" y="330"/>
         </scene>
     </scenes>
 </document>
