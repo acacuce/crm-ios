@@ -47,6 +47,12 @@ class DetailGoodViewController: UIViewController {
         updateButton.rx.tap
             .bind(onNext: viewModel.save)
             .disposed(by: disposeBag)
+        
+        viewModel.close
+            .bind { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
 }

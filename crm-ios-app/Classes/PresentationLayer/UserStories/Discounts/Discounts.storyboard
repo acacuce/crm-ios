@@ -10,21 +10,90 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Discount List View Controller-->
         <scene sceneID="Mlx-lM-HpN">
             <objects>
-                <viewController id="xxu-vh-vZV" sceneMemberID="viewController">
+                <viewController id="xxu-vh-vZV" customClass="DiscountListViewController" customModule="crm_ios_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7bi-0e-UJ8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VNc-42-g58">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationLevel="-1" indentationWidth="10" reuseIdentifier="DiscountCell" textLabel="Spr-Dt-gMk" detailTextLabel="Cmx-lE-g4J" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="WAT-EE-tWp">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WAT-EE-tWp" id="UTY-Cc-EkD">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Spr-Dt-gMk">
+                                                    <rect key="frame" x="15" y="20" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cmx-lE-g4J">
+                                                    <rect key="frame" x="15" y="43.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Q2f-w4-BOc">
+                                <rect key="frame" x="20" y="74" width="335" height="29"/>
+                                <segments>
+                                    <segment title="В процессе"/>
+                                    <segment title="Одобренные"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q2f-w4-BOc" firstAttribute="leading" secondItem="ncv-VO-2Z3" secondAttribute="leading" constant="20" id="9Ve-ec-B0l"/>
+                            <constraint firstItem="ncv-VO-2Z3" firstAttribute="trailing" secondItem="Q2f-w4-BOc" secondAttribute="trailing" constant="20" id="LmG-W1-eT2"/>
+                            <constraint firstItem="VNc-42-g58" firstAttribute="bottom" secondItem="ncv-VO-2Z3" secondAttribute="bottom" id="SjU-TT-wXD"/>
+                            <constraint firstItem="Q2f-w4-BOc" firstAttribute="top" secondItem="ncv-VO-2Z3" secondAttribute="top" constant="10" id="TqH-X8-NC9"/>
+                            <constraint firstItem="VNc-42-g58" firstAttribute="trailing" secondItem="ncv-VO-2Z3" secondAttribute="trailing" id="mab-nw-m3l"/>
+                            <constraint firstItem="VNc-42-g58" firstAttribute="leading" secondItem="ncv-VO-2Z3" secondAttribute="leading" id="s05-1L-Hh3"/>
+                            <constraint firstItem="VNc-42-g58" firstAttribute="top" secondItem="ncv-VO-2Z3" secondAttribute="top" id="xgn-Od-xYr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ncv-VO-2Z3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EsY-ev-Qr3"/>
+                    <navigationItem key="navigationItem" id="EsY-ev-Qr3">
+                        <barButtonItem key="rightBarButtonItem" title="Добавить" id="jYe-YN-Eq5"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="statusSegmentControl" destination="Q2f-w4-BOc" id="3kW-Dt-3r9"/>
+                        <outlet property="tableView" destination="VNc-42-g58" id="CJ5-YV-cqo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CS4-kJ-UDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2946" y="782"/>
+            <point key="canvasLocation" x="2720.8000000000002" y="723.68815592203907"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eoA-xF-ffP">
+            <objects>
+                <viewController id="emf-cl-nrT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oG0-An-hue">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UcR-do-usc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SoX-0V-ks2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3447" y="719"/>
         </scene>
         <!--Item-->
         <scene sceneID="0H3-by-G0i">

@@ -25,6 +25,10 @@
 		0590166820990D0E0030A0CA /* GoodsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0590166720990D0E0030A0CA /* GoodsService.swift */; };
 		0590166B209914AA0030A0CA /* DetailGoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0590166A209914AA0030A0CA /* DetailGoodViewController.swift */; };
 		0590166D209914B50030A0CA /* DetailGoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0590166C209914B50030A0CA /* DetailGoodViewModel.swift */; };
+		05901671209A0A1A0030A0CA /* DiscountListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05901670209A0A1A0030A0CA /* DiscountListViewController.swift */; };
+		05901673209A0A280030A0CA /* DiscountListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05901672209A0A280030A0CA /* DiscountListViewModel.swift */; };
+		05901675209A0C9C0030A0CA /* Discount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05901674209A0C9C0030A0CA /* Discount.swift */; };
+		05901677209A0D6E0030A0CA /* DiscountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05901676209A0D6E0030A0CA /* DiscountService.swift */; };
 		059CF490209880D1002AAB88 /* Discounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059CF48F209880D1002AAB88 /* Discounts.storyboard */; };
 		05ADF2BF2098A4DB004DBEA7 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05ADF2BE2098A4DB004DBEA7 /* Authorization.storyboard */; };
 		05ADF2C22098AC07004DBEA7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ADF2C12098AC07004DBEA7 /* SignInViewController.swift */; };
@@ -55,6 +59,10 @@
 		0590166720990D0E0030A0CA /* GoodsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsService.swift; sourceTree = "<group>"; };
 		0590166A209914AA0030A0CA /* DetailGoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGoodViewController.swift; sourceTree = "<group>"; };
 		0590166C209914B50030A0CA /* DetailGoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGoodViewModel.swift; sourceTree = "<group>"; };
+		05901670209A0A1A0030A0CA /* DiscountListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountListViewController.swift; sourceTree = "<group>"; };
+		05901672209A0A280030A0CA /* DiscountListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountListViewModel.swift; sourceTree = "<group>"; };
+		05901674209A0C9C0030A0CA /* Discount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discount.swift; sourceTree = "<group>"; };
+		05901676209A0D6E0030A0CA /* DiscountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountService.swift; sourceTree = "<group>"; };
 		059CF48F209880D1002AAB88 /* Discounts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discounts.storyboard; sourceTree = "<group>"; };
 		05ADF2BE2098A4DB004DBEA7 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		05ADF2C12098AC07004DBEA7 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +128,7 @@
 		0589933520987C87006265CE /* Discounts */ = {
 			isa = PBXGroup;
 			children = (
+				0590166E209A097E0030A0CA /* Modules */,
 				059CF48F209880D1002AAB88 /* Discounts.storyboard */,
 			);
 			path = Discounts;
@@ -171,6 +180,7 @@
 			children = (
 				059016542098EA690030A0CA /* User.swift */,
 				0590166520990C8E0030A0CA /* Good.swift */,
+				05901674209A0C9C0030A0CA /* Discount.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -223,6 +233,23 @@
 				0590166C209914B50030A0CA /* DetailGoodViewModel.swift */,
 			);
 			path = GoodDetailed;
+			sourceTree = "<group>";
+		};
+		0590166E209A097E0030A0CA /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0590166F209A09870030A0CA /* DiscountList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0590166F209A09870030A0CA /* DiscountList */ = {
+			isa = PBXGroup;
+			children = (
+				05901670209A0A1A0030A0CA /* DiscountListViewController.swift */,
+				05901672209A0A280030A0CA /* DiscountListViewModel.swift */,
+			);
+			path = DiscountList;
 			sourceTree = "<group>";
 		};
 		05ADF2BD2098A319004DBEA7 /* Authorization */ = {
@@ -329,6 +356,7 @@
 				0568E4922098B7A00079D181 /* NetworkCore */,
 				0568E4902098B7440079D181 /* UserService.swift */,
 				0590166720990D0E0030A0CA /* GoodsService.swift */,
+				05901676209A0D6E0030A0CA /* DiscountService.swift */,
 			);
 			path = BusinessLogicLayer;
 			sourceTree = "<group>";
@@ -520,12 +548,16 @@
 				05ADF2C22098AC07004DBEA7 /* SignInViewController.swift in Sources */,
 				E1D2DFBE208F9C2200FC4F69 /* AppDelegate.swift in Sources */,
 				0590166B209914AA0030A0CA /* DetailGoodViewController.swift in Sources */,
+				05901673209A0A280030A0CA /* DiscountListViewModel.swift in Sources */,
+				05901671209A0A1A0030A0CA /* DiscountListViewController.swift in Sources */,
 				0568E4982098BD160079D181 /* RequestProtocol.swift in Sources */,
+				05901675209A0C9C0030A0CA /* Discount.swift in Sources */,
 				059016592098F5B80030A0CA /* TabBarController.swift in Sources */,
 				0590166820990D0E0030A0CA /* GoodsService.swift in Sources */,
 				059016552098EA690030A0CA /* User.swift in Sources */,
 				05ADF2C52098AC2A004DBEA7 /* SignInViewModel.swift in Sources */,
 				0590166420990C430030A0CA /* GoodsListViewModel.swift in Sources */,
+				05901677209A0D6E0030A0CA /* DiscountService.swift in Sources */,
 				0590166220990C360030A0CA /* GoodsListViewController.swift in Sources */,
 				0590166D209914B50030A0CA /* DetailGoodViewModel.swift in Sources */,
 				0568E49A2098BD410079D181 /* TranslatorProtocol.swift in Sources */,

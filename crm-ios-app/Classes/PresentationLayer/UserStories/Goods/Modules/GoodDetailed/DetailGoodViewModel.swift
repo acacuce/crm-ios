@@ -14,6 +14,7 @@ class DetailGoodViewModel {
     var price = Variable<String>("")
     var sizes = Variable<String>("")
     var saveTitle = Variable<String>("")
+    var close = PublishSubject<Void>()
     var flow: Flow
     
     enum Flow {
@@ -37,6 +38,6 @@ class DetailGoodViewModel {
     }
     
     func save() {
-        
+        close.onNext(())
     }
 }
