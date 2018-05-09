@@ -12,7 +12,7 @@ import RxCocoa
 
 class NetworkTransport { 
     let session: URLSession
-    
+    static let shared = NetworkTransport()
     init() {
         session = URLSession(configuration: .default)
     }
@@ -21,7 +21,7 @@ class NetworkTransport {
         return session.rx
             .json(request: request.makeURLRequest())
             .map{ (json) -> Translator.TranslatedValue in
-                return try translator.translate(json)
+                return try translator.translate(json as! [String : Any])
             }
     }
 }

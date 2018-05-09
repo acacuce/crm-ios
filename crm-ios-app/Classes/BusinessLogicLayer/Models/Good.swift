@@ -10,6 +10,12 @@ import Foundation
 
 struct Good {
     var name: String
-    var price: Double
-    var sizes: String
+    var price: Float
+    var size: String
+
+    init(name: String, price: Float, size: String) {
+        self.name = name
+        self.price = price
+        self.size = size
+    }
 }

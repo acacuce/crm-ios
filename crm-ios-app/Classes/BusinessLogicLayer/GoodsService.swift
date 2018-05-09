@@ -11,6 +11,7 @@ import RxSwift
 class GoodsService {
     
     func fetchGoods() -> Observable<[Good]> {
-        return Observable.just([Good(name: "Test", price: 300.0, sizes: "L, XL")])
+        return Observable.just([Good(name: "Test", price: 300.0, size: "L, XL")])
+        //NetworkTransport.shared.execute(request: , translator: <#T##TranslatorProtocol#>)
     }
 }

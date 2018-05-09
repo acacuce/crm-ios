@@ -10,6 +10,6 @@ import Foundation
 
 protocol TranslatorProtocol {
     associatedtype TranslatedValue
-    func translate(_ json: Any) throws -> TranslatedValue
+    func translate(_ json: [String: Any]) throws -> TranslatedValue
 }
 

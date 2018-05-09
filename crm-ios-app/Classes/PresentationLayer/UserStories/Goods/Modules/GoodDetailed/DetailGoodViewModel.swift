@@ -33,7 +33,7 @@ class DetailGoodViewModel {
             saveTitle.value = "Изменить"
             name.value = good.name
             price.value = "\(good.price) руб"
-            sizes.value = good.sizes
+            sizes.value = good.size
         }
     }
     

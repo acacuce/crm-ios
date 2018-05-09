@@ -33,6 +33,9 @@
 		05ADF2BF2098A4DB004DBEA7 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05ADF2BE2098A4DB004DBEA7 /* Authorization.storyboard */; };
 		05ADF2C22098AC07004DBEA7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ADF2C12098AC07004DBEA7 /* SignInViewController.swift */; };
 		05ADF2C52098AC2A004DBEA7 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ADF2C42098AC2A004DBEA7 /* SignInViewModel.swift */; };
+		E118633420A380EE009774B9 /* GoodsTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E118633320A380EE009774B9 /* GoodsTranslator.swift */; };
+		E118633620A38298009774B9 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E118633520A38298009774B9 /* DictionaryExtension.swift */; };
+		E118633820A384C7009774B9 /* GoodsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E118633720A384C7009774B9 /* GoodsRequest.swift */; };
 		E1D2DFBE208F9C2200FC4F69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D2DFBD208F9C2200FC4F69 /* AppDelegate.swift */; };
 		E1D2DFC3208F9C2200FC4F69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D2DFC1208F9C2200FC4F69 /* Main.storyboard */; };
 		E1D2DFC5208F9C2200FC4F69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D2DFC4208F9C2200FC4F69 /* Assets.xcassets */; };
@@ -70,6 +73,9 @@
 		670D73179BA862FBC1F399B7 /* Pods-crm-ios-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crm-ios-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-crm-ios-app/Pods-crm-ios-app.debug.xcconfig"; sourceTree = "<group>"; };
 		692A9A29A09BC729F7AF76D9 /* Pods-crm-ios-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crm-ios-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-crm-ios-app/Pods-crm-ios-app.release.xcconfig"; sourceTree = "<group>"; };
 		74A8D78D8A7FCA49BF669980 /* Pods_crm_ios_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crm_ios_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E118633320A380EE009774B9 /* GoodsTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsTranslator.swift; sourceTree = "<group>"; };
+		E118633520A38298009774B9 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
+		E118633720A384C7009774B9 /* GoodsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsRequest.swift; sourceTree = "<group>"; };
 		E1D2DFBA208F9C2200FC4F69 /* crm-ios-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "crm-ios-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D2DFBD208F9C2200FC4F69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1D2DFC2208F9C2200FC4F69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				0568E4972098BD160079D181 /* RequestProtocol.swift */,
+				E118633720A384C7009774B9 /* GoodsRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -112,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				0568E4992098BD410079D181 /* TranslatorProtocol.swift */,
+				E118633320A380EE009774B9 /* GoodsTranslator.swift */,
 			);
 			path = Translators;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				0590165D209900AE0030A0CA /* UIStoryboardExtensions.swift */,
+				E118633520A38298009774B9 /* DictionaryExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -548,6 +557,7 @@
 				05ADF2C22098AC07004DBEA7 /* SignInViewController.swift in Sources */,
 				E1D2DFBE208F9C2200FC4F69 /* AppDelegate.swift in Sources */,
 				0590166B209914AA0030A0CA /* DetailGoodViewController.swift in Sources */,
+				E118633620A38298009774B9 /* DictionaryExtension.swift in Sources */,
 				05901673209A0A280030A0CA /* DiscountListViewModel.swift in Sources */,
 				05901671209A0A1A0030A0CA /* DiscountListViewController.swift in Sources */,
 				0568E4982098BD160079D181 /* RequestProtocol.swift in Sources */,
@@ -560,6 +570,8 @@
 				05901677209A0D6E0030A0CA /* DiscountService.swift in Sources */,
 				0590166220990C360030A0CA /* GoodsListViewController.swift in Sources */,
 				0590166D209914B50030A0CA /* DetailGoodViewModel.swift in Sources */,
+				E118633820A384C7009774B9 /* GoodsRequest.swift in Sources */,
+				E118633420A380EE009774B9 /* GoodsTranslator.swift in Sources */,
 				0568E49A2098BD410079D181 /* TranslatorProtocol.swift in Sources */,
 				0590165E209900AE0030A0CA /* UIStoryboardExtensions.swift in Sources */,
 				0568E4912098B7440079D181 /* UserService.swift in Sources */,
