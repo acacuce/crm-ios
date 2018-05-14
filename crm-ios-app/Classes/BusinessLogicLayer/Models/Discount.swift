@@ -9,6 +9,7 @@
 import Foundation
 
 struct Discount {
+
     enum Scope {
         case one
         case all
