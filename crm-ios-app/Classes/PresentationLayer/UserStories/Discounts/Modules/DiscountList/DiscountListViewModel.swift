@@ -40,6 +40,7 @@ class DiscountListViewModel {
     
     func fetchDiscounts() {
         discountsService.fetchAll()
+            .catchErrorJustReturn([])
             .bind(to: recivedDiscounts)
             .disposed(by: disposeBag)
     }

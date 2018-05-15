@@ -8,15 +8,14 @@
 
 import Foundation
 
-class GoodsTranslator: TranslatorProtocol {
-
-    enum GoodsKeys: String {
-        case name
-        case price
-        case kind
+class UniversalTranslator<Object: Codable>: TranslatorProtocol {
+    typealias TranslatedValue = Object
+    func translate(_ json: Data) throws -> TranslatedValue {
+        return try JSONDecoder().decode(TranslatedValue.self, from: json)
     }
-
-    func translate(_ json: [String: Any]) throws -> Good {
-        return Good(name: try json.getValueWithCast(key: GoodsKeys.name.rawValue), price: try json.getValueWithCast(key: GoodsKeys.price.rawValue), size: try json.getValueWithCast(key: GoodsKeys.kind.rawValue))
+    
+    func translate(_ value: TranslatedValue) throws -> Data {
+        return try JSONEncoder().encode(value)
     }
 }
+

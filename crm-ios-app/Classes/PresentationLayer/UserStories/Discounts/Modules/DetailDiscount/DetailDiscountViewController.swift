@@ -33,20 +33,28 @@ class DetailDiscountViewController: UIViewController {
         
         scopOneRadioButton.onSelect { [weak self] in
             self?.scopeAllRadioButton.deselect()
+            self?.viewModel.scopeAllEnable.value = false
+            self?.viewModel.scopeOneEnable.value = true
         }
         
         scopeAllRadioButton.onSelect { [weak self] in
             self?.scopOneRadioButton.deselect()
+            self?.viewModel.scopeAllEnable.value = true
+            self?.viewModel.scopeOneEnable.value = false
         }
         
         typePercentRadioButton.onSelect { [weak self] in
             self?.typeMoneyRadioButton.deselect()
+            self?.viewModel.percentEnable.value = true
+            self?.viewModel.countEnable.value = false
         }
         
         typeMoneyRadioButton.onSelect { [weak self] in
             self?.typePercentRadioButton.deselect()
+            self?.viewModel.percentEnable.value = false
+            self?.viewModel.countEnable.value = true
         }
-        // Do any additional setup after loading the view.
+        bind()
     }
 
     private func bind() {
@@ -58,6 +66,8 @@ class DetailDiscountViewController: UIViewController {
         saveButton.setTitle(viewModel.saveTitle.value, for: .normal)
         updateRadioButton(scopOneRadioButton, with: viewModel.scopeOneEnable.value)
         updateRadioButton(scopeAllRadioButton, with: viewModel.scopeAllEnable.value)
+        updateRadioButton(typeMoneyRadioButton, with: viewModel.countEnable.value)
+        updateRadioButton(typePercentRadioButton, with: viewModel.percentEnable.value)
 
         nameTextField.rx.text
             .filterNil()
@@ -79,9 +89,10 @@ class DetailDiscountViewController: UIViewController {
             .filterNil()
             .bind(to: viewModel.count)
             .disposed(by: disposeBag)
-
-
         
+        saveButton.rx.tap
+            .bind(onNext: viewModel.save)
+            .disposed(by: disposeBag)
 
         viewModel.close
             .bind { [weak self] in

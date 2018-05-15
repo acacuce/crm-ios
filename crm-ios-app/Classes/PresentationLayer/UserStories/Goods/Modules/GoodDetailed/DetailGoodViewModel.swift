@@ -15,6 +15,8 @@ class DetailGoodViewModel {
     var sizes = Variable<String>("")
     var saveTitle = Variable<String>("")
     var close = PublishSubject<Void>()
+    let goodService = GoodsService() 
+    private let disposeBag = DisposeBag() 
     var flow: Flow
     
     enum Flow {
@@ -38,6 +40,34 @@ class DetailGoodViewModel {
     }
     
     func save() {
-        close.onNext(())
+        guard let priceString = price.value.split(separator: " ").first,
+            let price = Double(priceString)
+        else {
+            return
+        }
+        let name = self.name.value
+        let sizes = self.sizes.value
+        
+        switch flow {
+        case .create:
+            let goods = Good(id: 0, name: name, price: price, size: sizes)
+            goodService.create(goods)
+                .observeOn(MainScheduler.instance)
+                .catchErrorJustReturn(())
+                .bind(to: close)
+                .disposed(by: disposeBag)
+            
+        case .update(let goods):
+            var updatedGoods = goods
+            updatedGoods.price = price
+            updatedGoods.name = name
+            updatedGoods.size = sizes
+            
+            goodService.create(updatedGoods)
+                .observeOn(MainScheduler.instance)
+                .catchErrorJustReturn(())
+                .bind(to: close)
+                .disposed(by: disposeBag)
+        }
     }
 }

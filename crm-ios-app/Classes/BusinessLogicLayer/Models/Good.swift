@@ -8,14 +8,17 @@
 
 import Foundation
 
-struct Good {
+struct Good: Codable, Identifieble {
+    var id: Int
     var name: String
-    var price: Float
+    var price: Double
     var size: String
-
-    init(name: String, price: Float, size: String) {
-        self.name = name
-        self.price = price
-        self.size = size
+    
+    enum CodingKeys: String, CodingKey {
+        case size = "kind"
+        case id
+        case name
+        case price
+        
     }
 }

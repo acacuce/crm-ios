@@ -16,12 +16,20 @@ class NetworkTransport {
     init() {
         session = URLSession(configuration: .default)
     }
+    
+    func execute(request: RequestProtocol) -> Observable<Void> {
+        return session.rx
+            .data(request: request.makeURLRequest())
+            .map { _ in () }
+    }
+    
     func execute<Translator: TranslatorProtocol>(request: RequestProtocol, translator: Translator) -> Observable<Translator.TranslatedValue> {
         
         return session.rx
-            .json(request: request.makeURLRequest())
+            .data(request: request.makeURLRequest())
             .map{ (json) -> Translator.TranslatedValue in
-                return try translator.translate(json as! [String : Any])
+                return try translator.translate(json)
             }
+            .observeOn(MainScheduler.instance)
     }
 }

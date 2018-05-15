@@ -8,10 +8,17 @@
 
 import Foundation
 
-struct User {
+
+struct User: Identifieble, Codable {
+    var id: Int
     var role: Role
-    var name: String
-    enum Role {
+    var username: String
+    var fullName: String
+    var email: String
+    var password: String
+    var shop: Shop?
+   
+    enum Role: String, Codable {
         case manager
         case administrator
         case main

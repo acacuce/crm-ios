@@ -15,6 +15,7 @@ class GoodsListViewModel {
     
     func fetchGoods() {
         goodsService.fetchGoods()
+            .catchErrorJustReturn([])
             .bind(to: goods)
             .disposed(by: disposeBag)
     }

@@ -23,6 +23,9 @@ class DetailDiscountViewModel {
     var saveTitle = Variable<String>("")
     var close = PublishSubject<Void>()
     var flow: Flow
+    private let disposeBag = DisposeBag() 
+    
+    let discountService = DiscountService()
     
     let dateFormatter = { () -> DateFormatter in
         let formatter = DateFormatter()
@@ -58,7 +61,7 @@ class DetailDiscountViewModel {
             }
 
             switch discount.type {
-            case .count(let value):
+            case .ammount(let value):
                 countEnable.value = true
                 percentEnable.value = false
                 count.value = String(value)
@@ -71,6 +74,38 @@ class DetailDiscountViewModel {
     }
 
     func save() {
+        let name = self.name.value
+        guard let begin = dateFormatter.date(from: beginDate.value),
+            let end = dateFormatter.date(from: endDate.value) 
+        else { 
+            return
+        } 
+        
+        let scope = (scopeAllEnable.value == true) ? Discount.Scope.all : Discount.Scope.one
+        let type: Discount.Typo
+        if percentEnable.value == true, let percent = Double(percent.value), 0...100 ~= percent {
+            type = .percent(percent)
+        } else if countEnable.value == true, let value = Double(count.value) {
+            type = .ammount(value)
+        } else {
+            return
+        }
+        
+        switch flow {
+        case .create:
+            let discount = Discount(id: 0, name: name, beginDate: begin, endDate: end, scope: scope, type: type, approved: false)
+            discountService.create(discount)
+                .catchErrorJustReturn(())
+                .bind(to: close)
+                .disposed(by: disposeBag)
+        case .update(let discount):
+            let newDiscount = Discount(id: discount.id, name: name, beginDate: begin, endDate: end, scope: scope, type: type, approved: discount.approved)
+            discountService.update(newDiscount)
+                .catchErrorJustReturn(())
+                .bind(to: close)
+                .disposed(by: disposeBag)
+        }
+        
         close.onNext(())
     }
 

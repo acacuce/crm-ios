@@ -9,12 +9,10 @@
 import Foundation
 
 protocol RequestProtocol {
-    var host: String {get}
     var path: String {get}
     var method: HTTPMethod {get}
     var parameters: RequestParameters {get}
     var headers: [String: String] {get}
-    var isProtected: Bool {get}
     
 }
 
@@ -27,7 +25,7 @@ public enum HTTPMethod: String {
 }
 
 public struct RequestParameters {
-    var jsonBody: [String: Any] = [:]
+    var jsonBody: Data?
     var url: [String: String] = [:]
 }
 
@@ -42,9 +40,11 @@ extension RequestProtocol {
     
     func makeURLRequest() -> URLRequest {
         var urlComponents = URLComponents()
-        urlComponents.scheme = "http"
-        urlComponents.host = host
+        urlComponents.scheme = Enviroment.protocol
+        urlComponents.host = Enviroment.host
+        urlComponents.port = Enviroment.port
         
+        urlComponents.path = "/" + Enviroment.version + path
         let queryItems = parameters.url.map { return URLQueryItem(name: $0, value: $1) }
         urlComponents.queryItems = queryItems
         
@@ -55,9 +55,8 @@ extension RequestProtocol {
         var request = URLRequest(url: url)
         request.allHTTPHeaderFields = headers
         request.httpMethod = method.rawValue.uppercased()
-        let json = parameters.jsonBody
-        if !json.isEmpty {
-            request.httpBody = try? JSONSerialization.data(withJSONObject: json, options: [])
+        if let json = parameters.jsonBody {
+            request.httpBody = json
         }
         return request
     }

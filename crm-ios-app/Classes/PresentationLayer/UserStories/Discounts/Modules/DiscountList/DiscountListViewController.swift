@@ -16,6 +16,12 @@ class DiscountListViewController: UIViewController {
     let viewModel = DiscountListViewModel()
     private let disposeBag = DisposeBag() 
     
+    struct Segues {
+        static let create = "CreateDiscountSegue"
+        static let update = "UpdateDiscountSegue"
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.contentInset.top += 40
@@ -50,17 +56,25 @@ class DiscountListViewController: UIViewController {
             .bind(to: viewModel.segmentValue)
             .disposed(by: disposeBag)
         
+        tableView.rx.itemSelected
+            .bind { [weak self] indexPath in
+                guard let `self` = self else { return }
+                let discount = self.viewModel.discounts.value[indexPath.row]
+                self.performSegue(withIdentifier: Segues.update, sender: discount)
+            }
+            .disposed(by: disposeBag)
+        
         
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == Segues.create, let destination = segue.destination as? DetailDiscountViewController {
+            destination.viewModel = DetailDiscountViewModel(flow: .create)
+        } 
+        
+        if segue.identifier == Segues.update, let destination = segue.destination as? DetailDiscountViewController, let discount = sender as? Discount {
+            destination.viewModel = DetailDiscountViewModel(flow: .update(discount))
+        } 
     }
-    */
 
 }

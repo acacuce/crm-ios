@@ -9,11 +9,25 @@
 import Foundation
 import RxSwift
 class DiscountService {
+    let path = "/discounts"
+    let transport = NetworkTransport.shared
     
     func fetchAll() -> Observable<[Discount]> {
-        let discount = Discount(name: "Test 1", beginDate: Date(), endDate: Date(), scope: .all, type: .count(500), approved: false)
-        let discount2 = Discount(name: "Test 2", beginDate: Date(), endDate: Date(), scope: .all, type: .count(500), approved: true)
-        
-        return Observable.just([discount, discount2])
+        let translator = UniversalTranslator<[Discount]>()
+        return transport
+            .execute(request: Request<Discount>(path: path, mock: Mock.all), translator: translator)
+            .observeOn(MainScheduler.instance)
+    }
+    
+    func update(_ discount: Discount) -> Observable<Void> {
+        return transport
+            .execute(request: Request<Discount>(path: path, mock: Mock.update(discount)))
+            .observeOn(MainScheduler.instance)
+    }
+    
+    func create(_ discount: Discount) -> Observable<Void> {
+        return transport
+            .execute(request: Request<Discount>(path: path, mock: Mock.create(discount)))
+            .observeOn(MainScheduler.instance)
     }
 }
