@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import RxOptional
-
+import SwifterSwift
 class DetailGoodViewController: UIViewController {
     
     @IBOutlet var nameTextField: UITextField!
@@ -22,6 +22,11 @@ class DetailGoodViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        updateButton.backgroundColor = UIColor(hexString: "#FF9052")
+        updateButton.tintColor = .black
+        updateButton.layer.cornerRadius = 8.0
         bind()
     }
     
@@ -31,7 +36,7 @@ class DetailGoodViewController: UIViewController {
         sizesTextField.text = viewModel.sizes.value
         title = viewModel.title.value
         updateButton.setTitle(viewModel.saveTitle.value, for: .normal)
-        
+
         nameTextField.rx.text
             .filterNil()
             .bind(to: viewModel.name)

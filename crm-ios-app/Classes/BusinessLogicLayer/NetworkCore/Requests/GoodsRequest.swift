@@ -26,8 +26,10 @@ struct Request<Value: Identifieble & Codable>: RequestProtocol {
         return object.method
     }
     
+    var urlParams: [String: String] = [:]
+    
     var parameters: RequestParameters {
-        return RequestParameters(jsonBody: object.body, url: [:])
+        return RequestParameters(jsonBody: object.body, url: urlParams)
     }
     
     var headers: [String : String] {

@@ -8,6 +8,24 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import SwifterSwift
+extension UserDefaults {
+    func saveUser(_ user: User) {
+        let encoder = JSONEncoder.init()
+        let data = try! encoder.encode(user)
+        setValue(data, forKey: "user")
+    }
+    
+    func getUser() -> User? {
+        guard let data = value(forKey: "user") as? Data else {
+            return nil
+        }
+        let decoder = JSONDecoder.init()
+        let user = try! decoder.decode(User.self, from: data) 
+        return user
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,7 +33,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
-        // Override point for customization after application launch.
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        let rootController: UIViewController
+        if let user = UserDefaults.standard.getUser() {
+            let rootController = TabBarController()
+            rootController.configure(with: user.role)
+            window?.rootViewController = rootController
+        } else {
+            window?.rootViewController = UIStoryboard.auth.instantiateInitialViewController()
+        }
+        UITabBar.appearance().barTintColor = UIColor(hexString: "#D7C5BB") 
+        UITabBar.appearance().isTranslucent = false
+        UITabBar.appearance().tintColor = .black
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().tintColor = UIColor(hexString: "#8190A5") 
+        UINavigationBar.appearance().barTintColor = UIColor(hexString: "#D7C5BB") 
+        
+        window?.makeKeyAndVisible()
+        
         return true
     }
 }

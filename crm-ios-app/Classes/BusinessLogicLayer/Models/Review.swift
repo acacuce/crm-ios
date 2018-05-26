@@ -7,16 +7,16 @@
 //
 
 import Foundation
-struct Report: Codable, Identifieble {
+struct Review: Codable, Identifieble {
     var id: Int
-    var sender: Int
-    var reciver: Int
+    var sender: User
+    var reciver: User
     var message: String
     
     enum CodingKeys: String, CodingKey {
         case id
-        case sender = "reviewer_id"
-        case reciver = "user_id"
+        case sender = "reviewer"
+        case reciver = "reviewed_user"
         case message = "content"
     }
 }

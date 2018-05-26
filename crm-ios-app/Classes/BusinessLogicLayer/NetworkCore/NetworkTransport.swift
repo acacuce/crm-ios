@@ -23,6 +23,7 @@ class NetworkTransport {
             .map { _ in () }
     }
     
+    
     func execute<Translator: TranslatorProtocol>(request: RequestProtocol, translator: Translator) -> Observable<Translator.TranslatedValue> {
         
         return session.rx

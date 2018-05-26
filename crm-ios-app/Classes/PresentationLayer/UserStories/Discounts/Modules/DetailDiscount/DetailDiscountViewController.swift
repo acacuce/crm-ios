@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyPickerPopover
 import LTHRadioButton
 import RxSwift
 import RxCocoa
@@ -30,11 +31,26 @@ class DetailDiscountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        saveButton.backgroundColor = UIColor(hexString: "#FF9052")
+        saveButton.tintColor = .black
+        saveButton.layer.cornerRadius = 8.0
+        datePicker(to: beginDateTextField)
+        datePicker(to: endDateTextField)
         scopOneRadioButton.onSelect { [weak self] in
-            self?.scopeAllRadioButton.deselect()
-            self?.viewModel.scopeAllEnable.value = false
-            self?.viewModel.scopeOneEnable.value = true
+            guard let `self` = self else { return }
+            StringPickerPopover(title: "Выберите товар", choices: self.viewModel.goods.value.map { $0.name } )
+                .setSelectedRow(0)
+                .setDoneButton(action: { (popover, selectedRow, selectedString) in
+                    self.viewModel.selectedGood = self.viewModel.goods.value[selectedRow]
+                    self.scopeAllRadioButton.deselect()
+                    self.viewModel.scopeAllEnable.value = false
+                    self.viewModel.scopeOneEnable.value = true
+                })
+                .setCancelButton(action: { (_, _, _) in 
+                    self.scopOneRadioButton.deselect()
+                })
+                .appear(originView: self.scopOneRadioButton, baseViewController: self)
+         
         }
         
         scopeAllRadioButton.onSelect { [weak self] in
@@ -56,6 +72,23 @@ class DetailDiscountViewController: UIViewController {
         }
         bind()
     }
+    
+    func datePicker(to textField: UITextField) {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.minimumDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        datePicker.rx.value
+            .map { (date) -> String in
+                dateFormatter.string(from: date)
+            }
+            .bind(to: textField.rx.text)
+            .disposed(by: disposeBag)
+        
+        textField.inputView = datePicker
+    }
+
 
     private func bind() {
         nameTextField.text = viewModel.name.value

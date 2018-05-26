@@ -15,8 +15,8 @@
 		055084CD20A9D3CE001D84AD /* DemoTextMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055084C820A9D3CE001D84AD /* DemoTextMessageViewModel.swift */; };
 		055084D220A9D3F3001D84AD /* DemoChatMessageSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055084CF20A9D3F3001D84AD /* DemoChatMessageSender.swift */; };
 		055084D320A9D3F3001D84AD /* DemoChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055084D020A9D3F3001D84AD /* DemoChatDataSource.swift */; };
-		055084D720A9D66B001D84AD /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055084D620A9D66B001D84AD /* Report.swift */; };
-		055084D920A9D706001D84AD /* ReportsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055084D820A9D706001D84AD /* ReportsService.swift */; };
+		055084D720A9D66B001D84AD /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055084D620A9D66B001D84AD /* Review.swift */; };
+		055084D920A9D706001D84AD /* ReviewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055084D820A9D706001D84AD /* ReviewsService.swift */; };
 		055084DB20AAC3B6001D84AD /* DemoChatItemsDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055084DA20AAC3B5001D84AD /* DemoChatItemsDecorator.swift */; };
 		0568E4912098B7440079D181 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0568E4902098B7440079D181 /* UserService.swift */; };
 		0568E4942098B7B90079D181 /* NetworkTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0568E4932098B7B90079D181 /* NetworkTransport.swift */; };
@@ -46,6 +46,25 @@
 		05ADF2BF2098A4DB004DBEA7 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05ADF2BE2098A4DB004DBEA7 /* Authorization.storyboard */; };
 		05ADF2C22098AC07004DBEA7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ADF2C12098AC07004DBEA7 /* SignInViewController.swift */; };
 		05ADF2C52098AC2A004DBEA7 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ADF2C42098AC2A004DBEA7 /* SignInViewModel.swift */; };
+		05C5AE6C20B8A51100A3E7A9 /* UIWindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE6B20B8A51000A3E7A9 /* UIWindowExtensions.swift */; };
+		05C5AE6E20B8A7D500A3E7A9 /* ReportPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE6D20B8A7D500A3E7A9 /* ReportPickerViewController.swift */; };
+		05C5AE7020B8A7E200A3E7A9 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE6F20B8A7E200A3E7A9 /* ReportViewController.swift */; };
+		05C5AE7720B8D0C600A3E7A9 /* TimeSeparatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE7420B8D0C600A3E7A9 /* TimeSeparatorModel.swift */; };
+		05C5AE7820B8D0C600A3E7A9 /* TimeSeparatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE7520B8D0C600A3E7A9 /* TimeSeparatorPresenter.swift */; };
+		05C5AE7920B8D0C600A3E7A9 /* TimeSeparatorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE7620B8D0C600A3E7A9 /* TimeSeparatorCollectionViewCell.swift */; };
+		05C5AE7B20B8D8E200A3E7A9 /* ReviewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE7A20B8D8E200A3E7A9 /* ReviewItem.swift */; };
+		05C5AE7D20B94C1100A3E7A9 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE7C20B94C1100A3E7A9 /* ChatViewController.swift */; };
+		05C5AE7F20B94C2100A3E7A9 /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE7E20B94C2100A3E7A9 /* ChatDataSource.swift */; };
+		05C5AE8120B94D0000A3E7A9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE8020B94D0000A3E7A9 /* Message.swift */; };
+		05C5AE8320B94E1700A3E7A9 /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE8220B94E1700A3E7A9 /* MessageItem.swift */; };
+		05C5AE8520B94E8600A3E7A9 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE8420B94E8600A3E7A9 /* MessageService.swift */; };
+		05C5AE8C20B96A3700A3E7A9 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE8A20B96A3700A3E7A9 /* ChatListViewController.swift */; };
+		05C5AE8D20B96A3700A3E7A9 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5AE8B20B96A3700A3E7A9 /* ChatListViewModel.swift */; };
+		05D29F2E20B2E7C000035BAE /* AuthItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D29F2D20B2E7BF00035BAE /* AuthItem.swift */; };
+		05D29F3520B30DE400035BAE /* DetailAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D29F3020B30DE400035BAE /* DetailAccountViewController.swift */; };
+		05D29F3620B30DE400035BAE /* DetailAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D29F3120B30DE400035BAE /* DetailAccountViewModel.swift */; };
+		05D29F3720B30DE400035BAE /* AccountListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D29F3320B30DE400035BAE /* AccountListViewController.swift */; };
+		05D29F3820B30DE400035BAE /* AccountListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D29F3420B30DE400035BAE /* AccountListViewModel.swift */; };
 		E118633420A380EE009774B9 /* GoodsTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E118633320A380EE009774B9 /* GoodsTranslator.swift */; };
 		E118633620A38298009774B9 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E118633520A38298009774B9 /* DictionaryExtension.swift */; };
 		E118633820A384C7009774B9 /* GoodsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E118633720A384C7009774B9 /* GoodsRequest.swift */; };
@@ -65,8 +84,8 @@
 		055084C820A9D3CE001D84AD /* DemoTextMessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTextMessageViewModel.swift; sourceTree = "<group>"; };
 		055084CF20A9D3F3001D84AD /* DemoChatMessageSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoChatMessageSender.swift; sourceTree = "<group>"; };
 		055084D020A9D3F3001D84AD /* DemoChatDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoChatDataSource.swift; sourceTree = "<group>"; };
-		055084D620A9D66B001D84AD /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
-		055084D820A9D706001D84AD /* ReportsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsService.swift; sourceTree = "<group>"; };
+		055084D620A9D66B001D84AD /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		055084D820A9D706001D84AD /* ReviewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsService.swift; sourceTree = "<group>"; };
 		055084DA20AAC3B5001D84AD /* DemoChatItemsDecorator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoChatItemsDecorator.swift; sourceTree = "<group>"; };
 		0568E4902098B7440079D181 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		0568E4932098B7B90079D181 /* NetworkTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTransport.swift; sourceTree = "<group>"; };
@@ -96,6 +115,25 @@
 		05ADF2BE2098A4DB004DBEA7 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
 		05ADF2C12098AC07004DBEA7 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		05ADF2C42098AC2A004DBEA7 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		05C5AE6B20B8A51000A3E7A9 /* UIWindowExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindowExtensions.swift; sourceTree = "<group>"; };
+		05C5AE6D20B8A7D500A3E7A9 /* ReportPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPickerViewController.swift; sourceTree = "<group>"; };
+		05C5AE6F20B8A7E200A3E7A9 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		05C5AE7420B8D0C600A3E7A9 /* TimeSeparatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSeparatorModel.swift; sourceTree = "<group>"; };
+		05C5AE7520B8D0C600A3E7A9 /* TimeSeparatorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSeparatorPresenter.swift; sourceTree = "<group>"; };
+		05C5AE7620B8D0C600A3E7A9 /* TimeSeparatorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSeparatorCollectionViewCell.swift; sourceTree = "<group>"; };
+		05C5AE7A20B8D8E200A3E7A9 /* ReviewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewItem.swift; sourceTree = "<group>"; };
+		05C5AE7C20B94C1100A3E7A9 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		05C5AE7E20B94C2100A3E7A9 /* ChatDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
+		05C5AE8020B94D0000A3E7A9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		05C5AE8220B94E1700A3E7A9 /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
+		05C5AE8420B94E8600A3E7A9 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		05C5AE8A20B96A3700A3E7A9 /* ChatListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		05C5AE8B20B96A3700A3E7A9 /* ChatListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
+		05D29F2D20B2E7BF00035BAE /* AuthItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthItem.swift; sourceTree = "<group>"; };
+		05D29F3020B30DE400035BAE /* DetailAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailAccountViewController.swift; sourceTree = "<group>"; };
+		05D29F3120B30DE400035BAE /* DetailAccountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailAccountViewModel.swift; sourceTree = "<group>"; };
+		05D29F3320B30DE400035BAE /* AccountListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewController.swift; sourceTree = "<group>"; };
+		05D29F3420B30DE400035BAE /* AccountListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountListViewModel.swift; sourceTree = "<group>"; };
 		670D73179BA862FBC1F399B7 /* Pods-crm-ios-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crm-ios-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-crm-ios-app/Pods-crm-ios-app.debug.xcconfig"; sourceTree = "<group>"; };
 		692A9A29A09BC729F7AF76D9 /* Pods-crm-ios-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-crm-ios-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-crm-ios-app/Pods-crm-ios-app.release.xcconfig"; sourceTree = "<group>"; };
 		74A8D78D8A7FCA49BF669980 /* Pods_crm_ios_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_crm_ios_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +227,8 @@
 		0589933620987CAF006265CE /* Accounts */ = {
 			isa = PBXGroup;
 			children = (
+				05D29F2F20B30DE400035BAE /* AccountDetailed */,
+				05D29F3220B30DE400035BAE /* AccountsList */,
 				0589934220987F27006265CE /* Accounts.storyboard */,
 			);
 			path = Accounts;
@@ -198,6 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				0589934420987F3E006265CE /* Reports.storyboard */,
+				05C5AE6D20B8A7D500A3E7A9 /* ReportPickerViewController.swift */,
+				05C5AE6F20B8A7E200A3E7A9 /* ReportViewController.swift */,
 			);
 			path = Reports;
 			sourceTree = "<group>";
@@ -223,6 +265,10 @@
 		0589933A20987DFE006265CE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				05C5AE8A20B96A3700A3E7A9 /* ChatListViewController.swift */,
+				05C5AE8B20B96A3700A3E7A9 /* ChatListViewModel.swift */,
+				05C5AE7C20B94C1100A3E7A9 /* ChatViewController.swift */,
+				05C5AE7E20B94C2100A3E7A9 /* ChatDataSource.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -233,8 +279,12 @@
 				059016542098EA690030A0CA /* User.swift */,
 				0590166520990C8E0030A0CA /* Good.swift */,
 				05901674209A0C9C0030A0CA /* Discount.swift */,
-				055084D620A9D66B001D84AD /* Report.swift */,
+				055084D620A9D66B001D84AD /* Review.swift */,
 				052C6F0A20AAEDB8009B8EDB /* Shop.swift */,
+				05D29F2D20B2E7BF00035BAE /* AuthItem.swift */,
+				05C5AE7A20B8D8E200A3E7A9 /* ReviewItem.swift */,
+				05C5AE8020B94D0000A3E7A9 /* Message.swift */,
+				05C5AE8220B94E1700A3E7A9 /* MessageItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,6 +295,7 @@
 				055084DA20AAC3B5001D84AD /* DemoChatItemsDecorator.swift */,
 				055084D020A9D3F3001D84AD /* DemoChatDataSource.swift */,
 				055084CF20A9D3F3001D84AD /* DemoChatMessageSender.swift */,
+				05C5AE7320B8D0C600A3E7A9 /* Time Separator */,
 				055084C220A9D3CD001D84AD /* Base Message */,
 				055084C520A9D3CE001D84AD /* Text Messages */,
 				055084C020A9D226001D84AD /* ShopViewController.swift */,
@@ -264,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				0590165D209900AE0030A0CA /* UIStoryboardExtensions.swift */,
+				05C5AE6B20B8A51000A3E7A9 /* UIWindowExtensions.swift */,
 				E118633520A38298009774B9 /* DictionaryExtension.swift */,
 			);
 			path = Extensions;
@@ -349,6 +401,34 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
+		05C5AE7320B8D0C600A3E7A9 /* Time Separator */ = {
+			isa = PBXGroup;
+			children = (
+				05C5AE7420B8D0C600A3E7A9 /* TimeSeparatorModel.swift */,
+				05C5AE7520B8D0C600A3E7A9 /* TimeSeparatorPresenter.swift */,
+				05C5AE7620B8D0C600A3E7A9 /* TimeSeparatorCollectionViewCell.swift */,
+			);
+			path = "Time Separator";
+			sourceTree = "<group>";
+		};
+		05D29F2F20B30DE400035BAE /* AccountDetailed */ = {
+			isa = PBXGroup;
+			children = (
+				05D29F3020B30DE400035BAE /* DetailAccountViewController.swift */,
+				05D29F3120B30DE400035BAE /* DetailAccountViewModel.swift */,
+			);
+			path = AccountDetailed;
+			sourceTree = "<group>";
+		};
+		05D29F3220B30DE400035BAE /* AccountsList */ = {
+			isa = PBXGroup;
+			children = (
+				05D29F3320B30DE400035BAE /* AccountListViewController.swift */,
+				05D29F3420B30DE400035BAE /* AccountListViewModel.swift */,
+			);
+			path = AccountsList;
+			sourceTree = "<group>";
+		};
 		18B3ACC9137C335559335B27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,7 +508,8 @@
 				0568E4902098B7440079D181 /* UserService.swift */,
 				0590166720990D0E0030A0CA /* GoodsService.swift */,
 				05901676209A0D6E0030A0CA /* DiscountService.swift */,
-				055084D820A9D706001D84AD /* ReportsService.swift */,
+				055084D820A9D706001D84AD /* ReviewsService.swift */,
+				05C5AE8420B94E8600A3E7A9 /* MessageService.swift */,
 			);
 			path = BusinessLogicLayer;
 			sourceTree = "<group>";
@@ -479,7 +560,6 @@
 				E1D2DFB7208F9C2200FC4F69 /* Frameworks */,
 				E1D2DFB8208F9C2200FC4F69 /* Resources */,
 				0849609634894083E357DBF7 /* [CP] Embed Pods Frameworks */,
-				1A33F8869708C0AD4DB8AB52 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -560,6 +640,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyPickerPopover/SwiftyPickerPopover.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -571,25 +652,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyPickerPopover.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-crm-ios-app/Pods-crm-ios-app-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1A33F8869708C0AD4DB8AB52 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-crm-ios-app/Pods-crm-ios-app-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A8A4898E37E0C3079263A995 /* [CP] Check Pods Manifest.lock */ = {
@@ -620,36 +687,55 @@
 				0590166620990C8E0030A0CA /* Good.swift in Sources */,
 				055084D320A9D3F3001D84AD /* DemoChatDataSource.swift in Sources */,
 				0568E4942098B7B90079D181 /* NetworkTransport.swift in Sources */,
+				05C5AE8120B94D0000A3E7A9 /* Message.swift in Sources */,
+				05C5AE7D20B94C1100A3E7A9 /* ChatViewController.swift in Sources */,
+				05C5AE6E20B8A7D500A3E7A9 /* ReportPickerViewController.swift in Sources */,
+				05C5AE8C20B96A3700A3E7A9 /* ChatListViewController.swift in Sources */,
+				05C5AE7020B8A7E200A3E7A9 /* ReportViewController.swift in Sources */,
 				05ADF2C22098AC07004DBEA7 /* SignInViewController.swift in Sources */,
 				E1D2DFBE208F9C2200FC4F69 /* AppDelegate.swift in Sources */,
+				05C5AE7820B8D0C600A3E7A9 /* TimeSeparatorPresenter.swift in Sources */,
+				05C5AE8520B94E8600A3E7A9 /* MessageService.swift in Sources */,
 				055084C120A9D226001D84AD /* ShopViewController.swift in Sources */,
 				055084D220A9D3F3001D84AD /* DemoChatMessageSender.swift in Sources */,
 				0590166B209914AA0030A0CA /* DetailGoodViewController.swift in Sources */,
 				E118633620A38298009774B9 /* DictionaryExtension.swift in Sources */,
+				05C5AE7B20B8D8E200A3E7A9 /* ReviewItem.swift in Sources */,
 				05901673209A0A280030A0CA /* DiscountListViewModel.swift in Sources */,
 				05901671209A0A1A0030A0CA /* DiscountListViewController.swift in Sources */,
-				055084D720A9D66B001D84AD /* Report.swift in Sources */,
+				055084D720A9D66B001D84AD /* Review.swift in Sources */,
 				055084CB20A9D3CE001D84AD /* DemoTextMessageModel.swift in Sources */,
+				05D29F3520B30DE400035BAE /* DetailAccountViewController.swift in Sources */,
+				05C5AE7920B8D0C600A3E7A9 /* TimeSeparatorCollectionViewCell.swift in Sources */,
 				0568E4982098BD160079D181 /* RequestProtocol.swift in Sources */,
 				0590167A209A4A050030A0CA /* DetailDiscountViewController.swift in Sources */,
 				052C6F0B20AAEDB8009B8EDB /* Shop.swift in Sources */,
 				05901675209A0C9C0030A0CA /* Discount.swift in Sources */,
+				05D29F3720B30DE400035BAE /* AccountListViewController.swift in Sources */,
 				059016592098F5B80030A0CA /* TabBarController.swift in Sources */,
 				0590166820990D0E0030A0CA /* GoodsService.swift in Sources */,
+				05C5AE8320B94E1700A3E7A9 /* MessageItem.swift in Sources */,
 				059016552098EA690030A0CA /* User.swift in Sources */,
 				05ADF2C52098AC2A004DBEA7 /* SignInViewModel.swift in Sources */,
 				0590166420990C430030A0CA /* GoodsListViewModel.swift in Sources */,
-				055084D920A9D706001D84AD /* ReportsService.swift in Sources */,
+				055084D920A9D706001D84AD /* ReviewsService.swift in Sources */,
+				05D29F3820B30DE400035BAE /* AccountListViewModel.swift in Sources */,
 				05901677209A0D6E0030A0CA /* DiscountService.swift in Sources */,
+				05C5AE8D20B96A3700A3E7A9 /* ChatListViewModel.swift in Sources */,
 				055084CD20A9D3CE001D84AD /* DemoTextMessageViewModel.swift in Sources */,
 				055084CC20A9D3CE001D84AD /* DemoTextMessageHandler.swift in Sources */,
 				055084DB20AAC3B6001D84AD /* DemoChatItemsDecorator.swift in Sources */,
 				0590167C209A4A140030A0CA /* DetailDiscountViewModel.swift in Sources */,
 				055084CA20A9D3CE001D84AD /* BaseMessageCollectionViewCellAvatarStyle.swift in Sources */,
 				0590166220990C360030A0CA /* GoodsListViewController.swift in Sources */,
+				05D29F2E20B2E7C000035BAE /* AuthItem.swift in Sources */,
 				0590166D209914B50030A0CA /* DetailGoodViewModel.swift in Sources */,
+				05C5AE6C20B8A51100A3E7A9 /* UIWindowExtensions.swift in Sources */,
 				E118633820A384C7009774B9 /* GoodsRequest.swift in Sources */,
+				05C5AE7720B8D0C600A3E7A9 /* TimeSeparatorModel.swift in Sources */,
+				05C5AE7F20B94C2100A3E7A9 /* ChatDataSource.swift in Sources */,
 				E118633420A380EE009774B9 /* GoodsTranslator.swift in Sources */,
+				05D29F3620B30DE400035BAE /* DetailAccountViewModel.swift in Sources */,
 				0568E49A2098BD410079D181 /* TranslatorProtocol.swift in Sources */,
 				0590165E209900AE0030A0CA /* UIStoryboardExtensions.swift in Sources */,
 				0568E4912098B7440079D181 /* UserService.swift in Sources */,

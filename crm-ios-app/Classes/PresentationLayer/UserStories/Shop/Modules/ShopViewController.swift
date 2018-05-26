@@ -7,17 +7,39 @@
 //
 
 import Foundation
+import IQKeyboardManagerSwift
 import Chatto
+import SwiftyPickerPopover
 import ChattoAdditions
+import RxCocoa
+import RxSwift
 
 class ShopViewController: BaseChatViewController {
     
     var chatInputPresenter: BasicChatInputBarPresenter!
-    
+    var userService = UserService()
+    var reviewService = ReviewsService()
+    private let disposeBag = DisposeBag() 
+    var users = Variable<[User]>([])
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Магазин"
+        view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "ic_back"))
         self.chatDataSource = ShopChatDataSource()
         self.chatItemsDecorator = DemoChatItemsDecorator()
+        userService.fetchAll()
+            .bind(to: users)
+            .disposed(by: disposeBag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        IQKeyboardManager.shared.enable = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        IQKeyboardManager.shared.enable = true
     }
     
     override func createPresenterBuilders() -> [ChatItemType: [ChatItemPresenterBuilderProtocol]] {
@@ -27,6 +49,7 @@ class ShopViewController: BaseChatViewController {
         )
         return [
             "text": [textMessagePresenter],
+            TimeSeparatorModel.chatItemType: [TimeSeparatorPresenterBuilder()]
         ]
     }
     
@@ -49,7 +72,24 @@ class ShopViewController: BaseChatViewController {
     private func createTextInputItem() -> TextChatInputItem {
         let item = TextChatInputItem()
         item.textInputHandler = { [weak self] text in
-            // Your handling logic
+            guard let `self` = self else { return }
+            StringPickerPopover(title: "Выберите пользователя", choices: self.users.value.map { $0.fullName } )
+                .setSelectedRow(0)
+                .setDoneButton(action: { (popover, selectedRow, selectedString) in
+                    let user = UserDefaults.standard.getUser()!
+                    let reviewed = self.users.value[selectedRow]
+                    let item = ReviewItem(id: 0, reviewedId: reviewed.id, reviewerId: user.id, content: text)
+                    self.reviewService.send(item, for: user.id).subscribe({ (event) in
+                        guard let review = event.element else {
+                            return
+                        }
+                        (self.chatDataSource as! ShopChatDataSource).addReviews([review])
+                    }).disposed(by: self.disposeBag)
+                })
+                .setCancelButton(action: { (_, _, _) in 
+                    
+                })
+                .appear(originView: self.inputContainer, baseViewController: self)
         }
         return item
     }

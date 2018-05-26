@@ -9,23 +9,23 @@
 import Foundation
 import RxSwift
 
-class ReportsService {
+class ReviewsService {
     let path = "/reviews"
     let transport = NetworkTransport.shared
     
-    func fetchAll(for userId: Int) -> Observable<[Report]> {
-        let translator = UniversalTranslator<[Report]>()
+    func fetchAll(for userId: Int) -> Observable<[Review]> {
+        let translator = UniversalTranslator<[Review]>()
         let full = "/users/\(userId)" + path
         return transport
-            .execute(request: Request<Report>(path: full, mock: Mock.all), translator: translator)
+            .execute(request: Request<Review>(path: full, mock: Mock.all), translator: translator)
             .observeOn(MainScheduler.instance)
     }
     
-    func send(_ report: Report, for userId: Int) -> Observable<Void> {
-        let translator = UniversalTranslator<[Report]>()
+    func send(_ report: ReviewItem, for userId: Int) -> Observable<Review> {
+        let translator = UniversalTranslator<Review>()
         let full = "/users/\(userId)" + path
         return transport
-            .execute(request: Request<Report>(path: full, mock: Mock.create(report)))
+            .execute(request: Request<ReviewItem>(path: full, mock: Mock.create(report)), translator: translator)
             .observeOn(MainScheduler.instance)
     }
 }

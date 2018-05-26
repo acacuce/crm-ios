@@ -22,6 +22,10 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "ic_back"))
+        signInButton.backgroundColor = UIColor(hexString: "#FF9052")
+        signInButton.tintColor = .black
+        signInButton.layer.cornerRadius = 8.0
         bind()
     }
     
@@ -38,6 +42,18 @@ class SignInViewController: UIViewController {
         signInButton.rx.tap
             .bind(onNext: viewModel.signIn)
             .disposed(by: disposeBag)
+        viewModel.open.bind { role in
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                return
+            }
+            
+            let tab = TabBarController()
+            tab.configure(with: role)
+            let transition = CATransition()
+            transition.type = kCATransitionFade
+            appDelegate.window?.set(rootViewController: tab, withTransition: transition)
+            
+        }.disposed(by: disposeBag)
     }
 
 }

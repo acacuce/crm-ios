@@ -12,11 +12,11 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        configure(with: .main)
     }
     
     func configure(with role: User.Role) {
@@ -34,8 +34,16 @@ class TabBarController: UITabBarController {
         accounts.tabBarItem = UITabBarItem(title: "Учетные записи", image: nil, selectedImage: nil)
         discounts.tabBarItem = UITabBarItem(title: "Скидки", image: nil, selectedImage: nil)
         chat.tabBarItem = UITabBarItem(title: "Чат", image: nil, selectedImage: nil)
+        switch role {
+        case .admin:
+            setViewControllers([shop, chat, discounts, accounts, reports, goods], animated: false)
+        case .cashier:
+            setViewControllers([shop, chat], animated: false)
+        case .manager: 
+            setViewControllers([shop, chat, discounts, accounts, reports], animated: false)
         
-        setViewControllers([shop, chat, discounts, accounts, reports, goods], animated: false)
+        }
+        
         
     }
 }

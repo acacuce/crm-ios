@@ -31,4 +31,13 @@ class GoodsService {
             )
         )
     }
+    
+    func update(_ goods: Good) -> Observable<Void> {
+        return transport.execute(
+            request: Request<Good>(
+                path: rootPath,
+                mock: Mock.update(goods)
+            )
+        )
+    }
 }

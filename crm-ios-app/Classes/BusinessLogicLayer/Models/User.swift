@@ -16,11 +16,23 @@ struct User: Identifieble, Codable {
     var fullName: String
     var email: String
     var password: String
+    let blocked: Bool = false
     var shop: Shop?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case role
+        case username
+        case blocked
+        case fullName = "full_name"
+        case email
+        case password = "password_digest"
+        case shop
+    }
    
     enum Role: String, Codable {
+        case cashier
+        case admin
         case manager
-        case administrator
-        case main
     }
 }

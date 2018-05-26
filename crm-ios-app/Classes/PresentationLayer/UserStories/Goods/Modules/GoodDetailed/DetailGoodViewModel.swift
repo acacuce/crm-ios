@@ -63,7 +63,7 @@ class DetailGoodViewModel {
             updatedGoods.name = name
             updatedGoods.size = sizes
             
-            goodService.create(updatedGoods)
+            goodService.update(updatedGoods)
                 .observeOn(MainScheduler.instance)
                 .catchErrorJustReturn(())
                 .bind(to: close)

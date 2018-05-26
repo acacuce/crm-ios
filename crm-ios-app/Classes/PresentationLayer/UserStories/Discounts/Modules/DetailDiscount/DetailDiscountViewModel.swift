@@ -22,6 +22,9 @@ class DetailDiscountViewModel {
     var count = Variable<String>("")
     var saveTitle = Variable<String>("")
     var close = PublishSubject<Void>()
+    var selectedGood: Good?
+    var goods = Variable<[Good]>([])
+    let goodService = GoodsService()
     var flow: Flow
     private let disposeBag = DisposeBag() 
     
@@ -29,7 +32,7 @@ class DetailDiscountViewModel {
     
     let dateFormatter = { () -> DateFormatter in
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.YYYY"
+        formatter.dateFormat = "dd.MM.yyyy"
         return formatter
     }()
 
@@ -40,6 +43,7 @@ class DetailDiscountViewModel {
 
     init(flow: Flow) {
         self.flow = flow
+        goodService.fetchGoods().bind(to: goods).disposed(by: disposeBag)
         switch flow {
         case .create:
             title.value = "Добавить скидку"
@@ -82,6 +86,11 @@ class DetailDiscountViewModel {
         } 
         
         let scope = (scopeAllEnable.value == true) ? Discount.Scope.all : Discount.Scope.one
+        guard let goodId = selectedGood?.id else {
+            return
+        }
+        
+        
         let type: Discount.Typo
         if percentEnable.value == true, let percent = Double(percent.value), 0...100 ~= percent {
             type = .percent(percent)
@@ -93,13 +102,15 @@ class DetailDiscountViewModel {
         
         switch flow {
         case .create:
-            let discount = Discount(id: 0, name: name, beginDate: begin, endDate: end, scope: scope, type: type, approved: false)
+            var discount = Discount(id: 0, name: name, beginDate: begin, endDate: end, scope: scope, type: type, approved: false)
+            discount.goodId = goodId
             discountService.create(discount)
                 .catchErrorJustReturn(())
                 .bind(to: close)
                 .disposed(by: disposeBag)
         case .update(let discount):
-            let newDiscount = Discount(id: discount.id, name: name, beginDate: begin, endDate: end, scope: scope, type: type, approved: discount.approved)
+            var newDiscount = Discount(id: discount.id, name: name, beginDate: begin, endDate: end, scope: scope, type: type, approved: discount.approved)
+            newDiscount.goodId = goodId
             discountService.update(newDiscount)
                 .catchErrorJustReturn(())
                 .bind(to: close)

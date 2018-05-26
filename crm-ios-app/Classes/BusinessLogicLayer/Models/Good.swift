@@ -15,7 +15,7 @@ struct Good: Codable, Identifieble {
     var size: String
     
     enum CodingKeys: String, CodingKey {
-        case size = "kind"
+        case size = "sizes"
         case id
         case name
         case price

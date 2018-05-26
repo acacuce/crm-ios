@@ -25,6 +25,7 @@ PODS:
   - SwifterSwift/MapKit (4.3.0)
   - SwifterSwift/SwiftStdlib (4.3.0)
   - SwifterSwift/UIKit (4.3.0)
+  - SwiftyPickerPopover (6.3.1)
 
 DEPENDENCIES:
   - Chatto (= 3.3.1)
@@ -35,6 +36,19 @@ DEPENDENCIES:
   - RxOptional
   - RxSwift (~> 4.0)
   - SwifterSwift
+  - SwiftyPickerPopover
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Chatto
+    - ChattoAdditions
+    - IQKeyboardManagerSwift
+    - LTHRadioButton
+    - RxCocoa
+    - RxOptional
+    - RxSwift
+    - SwifterSwift
+    - SwiftyPickerPopover
 
 SPEC CHECKSUMS:
   Chatto: 24a6c9b0c91b08130466888b8b61563b90191c6f
@@ -45,7 +59,8 @@ SPEC CHECKSUMS:
   RxOptional: fabc37fc8e3cf4c336ebaeb5c92b576c64b2e6c5
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SwifterSwift: f3fce2b9fc5b9d8fda6eec33825e5243c60aebba
+  SwiftyPickerPopover: 7c8ae80885997f92635d208e64cfb77727d3d008
 
-PODFILE CHECKSUM: cac80462cb9f3cccd72073f9b58c47abda213e2f
+PODFILE CHECKSUM: 5482e0306dc4bae74d93fe839ce1aaa72d400086
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.2

@@ -24,8 +24,13 @@ class DiscountListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.contentInset.top += 40
+        statusSegmentControl.tintColor = UIColor(hexString: "#FF9052")
+
+        view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "ic_back"))
+        tableView.contentInset.top += 45
         tableView.tableFooterView = UIView(frame: .zero)
+        tableView.backgroundView = nil
+        tableView.backgroundColor = .clear
         title = "Скидки"
         bind()
 

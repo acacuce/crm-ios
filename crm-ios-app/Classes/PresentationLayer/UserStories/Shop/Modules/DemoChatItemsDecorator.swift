@@ -46,12 +46,18 @@ final class DemoChatItemsDecorator: ChatItemsDecoratorProtocol {
 
             let bottomMargin = self.separationAfterItem(chatItem, next: next)
             var showsTail = false
+            
             var additionalItems =  [DecoratedChatItem]()
             var addTimeSeparator = false
             var isSelected = false
             var isShowingSelectionIndicator = false
 
             if let currentMessage = chatItem as? MessageModelProtocol {
+                
+                if let text = currentMessage as? DemoTextMessageModel {
+                    let dateTimeStamp = DecoratedChatItem(chatItem: TimeSeparatorModel(uid: "\(currentMessage.uid)-time-separator", date: text.reviewer.fullName, aligment: text.isIncoming), decorationAttributes: nil)
+                    decoratedChatItems.append(dateTimeStamp)
+                }
                 if let nextMessage = next as? MessageModelProtocol {
                     showsTail = currentMessage.senderId != nextMessage.senderId
                 } else {
@@ -73,6 +79,8 @@ final class DemoChatItemsDecorator: ChatItemsDecoratorProtocol {
                 isShowingSelectionIndicator: isShowingSelectionIndicator,
                 isSelected: isSelected
             )
+            
+           
 
             decoratedChatItems.append(
                 DecoratedChatItem(

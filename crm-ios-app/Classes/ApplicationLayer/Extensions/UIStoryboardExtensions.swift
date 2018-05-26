@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 extension UIStoryboard {
+    static let auth = { return UIStoryboard.init(name: "Authorization", bundle: .main) }()
     static let shop = { return UIStoryboard.init(name: "Shop", bundle: .main) }()
     static let goods = { return UIStoryboard.init(name: "Goods", bundle: .main) }()
     static let reports = { return UIStoryboard.init(name: "Reports", bundle: .main) }()

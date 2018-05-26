@@ -25,12 +25,14 @@
 import Foundation
 import ChattoAdditions
 
-public class DemoTextMessageModel: TextMessageModel<MessageModel>, DemoMessageModelProtocol {
-    public override init(messageModel: MessageModel, text: String) {
+class DemoTextMessageModel: TextMessageModel<MessageModel>, DemoMessageModelProtocol {
+    var reviewer: User
+    init(messageModel: MessageModel, text: String, user: User) {
+        self.reviewer = user
         super.init(messageModel: messageModel, text: text)
     }
 
-    public var status: MessageStatus {
+    var status: MessageStatus {
         get {
             return self._messageModel.status
         }

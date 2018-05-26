@@ -30,20 +30,26 @@ import RxSwift
 class ShopChatDataSource: ChatDataSourceProtocol {
     var nextMessageId: Int = 0
     let preferredMaxWindowSize = 500
-    let reportService = ReportsService()
+    let reportService = ReviewsService()
     private let disposeBag = DisposeBag() 
     init() {
-        reportService.fetchAll(for: 1).subscribe { (event) in
+        let user = UserDefaults.standard.getUser()!
+        reportService.fetchAll(for: user.id).subscribe { (event) in
             guard let reports = event.element else {
                 return
             }
-            let messages = reports.map { report in
-                return DemoTextMessageModel(messageModel: MessageModel(uid: "\(report.id)", senderId: "\(report.sender)", type: "text", isIncoming: report.sender != report.reciver, date: Date(), status: .success), text: report.message)
-            }
-            self.chatItems.append(contentsOf: messages)
-            self.delegate?.chatDataSourceDidUpdate(self, updateType: .normal)
+            self.addReviews(reports)
             
         }.disposed(by: disposeBag)
+    }
+    
+    func addReviews(_ reviews: [Review]) {
+        let user = UserDefaults.standard.getUser()!
+        let messages = reviews.map { report in
+            return DemoTextMessageModel(messageModel: MessageModel(uid: "\(report.id)", senderId: "\(report.sender.id)", type: "text", isIncoming: report.sender.id != user.id, date: Date(), status: .success), text: report.message, user: report.sender)
+        }
+        self.chatItems.append(contentsOf: messages)
+        self.delegate?.chatDataSourceDidUpdate(self, updateType: .normal)
     }
 
     var hasMoreNext: Bool {

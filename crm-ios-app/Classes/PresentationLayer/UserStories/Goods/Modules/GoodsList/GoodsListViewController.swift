@@ -23,9 +23,12 @@ class GoodsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "ic_back"))
         title = "Товары"
         bind()
         tableView.tableFooterView = UIView(frame: .zero)
+        tableView.backgroundView = nil
+        tableView.backgroundColor = .clear
     }
     
     override func viewWillAppear(_ animated: Bool) {

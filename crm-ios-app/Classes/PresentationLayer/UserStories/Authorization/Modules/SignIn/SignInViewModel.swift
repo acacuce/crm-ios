@@ -14,6 +14,8 @@ class SignInViewModel {
     var username = Variable<String>("") 
     var password = Variable<String>("")
     var isLoading = PublishSubject<Bool>()
+    var open = PublishSubject<User.Role>()
+    private let disposeBag = DisposeBag() 
     let userService = UserService() 
     
     func signIn() {
@@ -23,9 +25,9 @@ class SignInViewModel {
             guard let user = event.element else {
                 return
             }
-            
-            
-        }
+            UserDefaults.standard.saveUser(user)
+            self.open.onNext(user.role)
+        }.disposed(by: disposeBag)
     }
     
 }
